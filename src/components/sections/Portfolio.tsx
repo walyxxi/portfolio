@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
-import { ArrowDown, ArrowUp } from "lucide-react";
+import { ArrowDown, ArrowUp, Link } from "lucide-react";
+import { useState } from "react";
+import Modal from "../ui/Modal";
 
 interface Project {
   name: string;
@@ -48,7 +50,7 @@ const Portfolio = () => {
     },
     {
       name: "Danone DanBoard",
-      desc: "Web Applications used by Danone which presents information about Bottled Water Products in Indonesia from Nielsen, Kantar, Ipsos BHT, and Internal Reports",
+      desc: "Web Applications used by Danone which presents information about Mineral Water Products in Indonesia from Nielsen, Kantar, Ipsos BHT, and Internal Reports",
       link: "",
       image: "/images/portfolio/danone-danboard.png",
       status: "live",
@@ -69,6 +71,18 @@ const Portfolio = () => {
     },
   ];
 
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<Project>();
+
+  const onModalClose = () => {
+    setModalOpen(false);
+  };
+
+  const onModalOpen = (project: Project) => {
+    setModalOpen(true);
+    setSelectedProject(project);
+  };
+
   return (
     <>
       <div
@@ -83,15 +97,16 @@ const Portfolio = () => {
           className="h-full w-full flex flex-col gap-6 md:gap-10 p-6 md:p-12"
         >
           <h2 className="text-4xl md:text-6xl">Portfolio</h2>
-          <div className="overflow-y-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-6 pb-12">
+          <div className="h-auto overflow-y-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-6 pb-12">
             {PROJECTS.map((project, idx) => (
               <motion.div
+                onClick={() => onModalOpen(project)}
                 key={project.name + idx}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: idx * 0.1 }}
-                className="bg-white/10 rounded-xl shadow-lg flex-1 flex-col justify-between cursor-pointer"
+                className="h-auto bg-white/10 rounded-xl shadow-lg flex-1 flex-col justify-between cursor-pointer"
               >
                 <img
                   src={project.image}
@@ -125,9 +140,9 @@ const Portfolio = () => {
             ))}
           </div>
         </motion.div>
-        <div className="absolute bottom-0 w-full flex flex-col">
+        <div className="flex flex-col">
           <motion.div
-            className="flex justify-end items-center p-6 md:p-12"
+            className="absolute bottom-12 right-0 flex justify-end items-center p-6 md:p-12"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 1.5 }}
@@ -153,11 +168,51 @@ const Portfolio = () => {
               </button>
             </div>
           </motion.div>
-          <div className="h-10 md:h-12 w-full bg-primary" />
+          <div className="absolute bottom-0 right-0 h-10 md:h-12 w-full bg-primary" />
         </div>
       </div>
 
       {/* Portfolio Details */}
+      <Modal isOpen={isModalOpen} onClose={onModalClose}>
+        <div className="flex md:flex-row flex-col-reverse">
+          <div className="flex flex-col justify-between p-2 md:p-4 md:min-w-1/4">
+            <div>
+              <h2 className="text-lg md:text-xl font-semibold mb-4">
+                {selectedProject?.name}
+              </h2>
+              <p className="text-sm md:text-md text-gray-700">
+                {selectedProject?.desc}
+              </p>
+            </div>
+            <div className="text-white w-auto">
+              {selectedProject?.link ? (
+                <a
+                  href={selectedProject.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-sm font-medium rounded-full bg-green/50 px-2 py-1"
+                >
+                  <Link className="w-3 h-3" /> Visit
+                </a>
+              ) : (
+                <span className="text-sm bg-orange px-2 py-1 rounded-full">
+                  {selectedProject?.status === "inprogress" ? (
+                    <i>Build In Progress</i>
+                  ) : (
+                    "Internal Use"
+                  )}
+                </span>
+              )}
+            </div>
+          </div>
+          <div>
+            <img
+              src={selectedProject?.image}
+              className="rounded-t-xl md:rounded-r-xl md:rounded-t-none object-cover object-top"
+            />
+          </div>
+        </div>
+      </Modal>
     </>
   );
 };

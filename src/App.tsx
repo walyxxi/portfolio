@@ -1,7 +1,7 @@
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Portfolio from "./components/Portfolio";
-import Contact from "./components/Contact";
+import Hero from "./components/sections/Hero";
+import About from "./components/sections/About";
+import Portfolio from "./components/sections/Portfolio";
+import Contact from "./components/sections/Contact";
 import { ReactNode } from "react";
 
 interface Section {
@@ -19,7 +19,7 @@ function App() {
   ];
 
   return (
-    <div className="relative font-sans bg-black text-primary">
+    <div className="font-sans bg-black text-primary">
       {SECTIONS.map((item) => item.section)}
     </div>
   );
