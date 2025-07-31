@@ -112,6 +112,7 @@ const Portfolio = () => {
                   src={project.image}
                   alt={project.name}
                   className="w-full h-44 md:h-56 object-cover object-top rounded-t-xl"
+                  loading="lazy"
                 />
                 <div className="flex flex-col justify-between flex-1 p-2 md:p-3">
                   <div className="flex flex-row justify-between items-center">
@@ -184,7 +185,7 @@ const Portfolio = () => {
                 {selectedProject?.desc}
               </p>
             </div>
-            <div className="text-white w-auto">
+            <div className="text-white w-auto mt-2">
               {selectedProject?.link ? (
                 <a
                   href={selectedProject.link}
@@ -209,6 +210,7 @@ const Portfolio = () => {
             <img
               src={selectedProject?.image}
               className="rounded-t-xl md:rounded-r-xl md:rounded-t-none object-cover object-top"
+              loading="lazy"
             />
           </div>
         </div>
