@@ -1,6 +1,6 @@
 import Hero from "./components/sections/Hero";
 import About from "./components/sections/About";
-import Portfolio from "./components/sections/Portfolio";
+import Projects from "./components/sections/Projects";
 import Contact from "./components/sections/Contact";
 import { ReactNode } from "react";
 
@@ -14,8 +14,8 @@ function App() {
   const SECTIONS: Section[] = [
     { id: 1, name: "hero", section: <Hero /> },
     { id: 2, name: "about", section: <About /> },
-    { id: 3, name: "portfolio", section: <Portfolio /> },
-    { id: 3, name: "About", section: <Contact /> },
+    { id: 3, name: "projects", section: <Projects /> },
+    { id: 3, name: "coontact", section: <Contact /> },
   ];
 
   return (

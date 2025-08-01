@@ -11,62 +11,62 @@ interface Project {
   status: string;
 }
 
-const Portfolio = () => {
+const Projects = () => {
   const PROJECTS: Project[] = [
     {
-      name: "Freshco",
-      desc: "",
+      name: "FreshCo",
+      desc: `Freshco Fruit in Indonesia is a fruit store that sells fresh fruits, including both local and premium imported varieties, as well as high-end "luxury" fruits. They also offer a product called Frosty Fruit, which consists of frozen shaved fruit. Freshco Fruit emphasizes the premium quality and freshness of their products — some of which are imported directly from their country of origin and flown to Indonesia using a well-maintained cold chain system.`,
       link: "",
-      image: "/images/portfolio/freshco.png",
+      image: "/images/projects/freshco.png",
       status: "inprogress",
     },
     {
-      name: "Anihost",
-      desc: "",
+      name: "ANIHOST",
+      desc: "anihost.com is the official website of ANIHOST, a web hosting provider based in Indonesia.",
       link: "https://anihost.com",
-      image: "/images/portfolio/anihost.png",
+      image: "/images/projects/anihost.png",
       status: "live",
     },
     {
       name: "eDOT",
-      desc: "Web Profile of eDOT Company",
+      desc: "Web Profile of eDOT Company.",
       link: "https://edot.id",
-      image: "/images/portfolio/edot.png",
+      image: "/images/projects/edot.png",
       status: "live",
     },
     {
       name: "eDOT Chat",
       desc: "Web Chat for eDOT",
       link: "https://chat.edot.id",
-      image: "/images/portfolio/edot-chat.png",
+      image: "/images/projects/edot-chat.png",
       status: "live",
     },
     {
       name: "eDOT Wheel of Fortune",
-      desc: "Web Chat for eDOT",
+      desc: "Mini game that integrated with eDOT App.",
       link: "https://fortune-wheel.edot.id",
-      image: "/images/portfolio/edot-wof.png",
+      image: "/images/projects/edot-wof.png",
       status: "live",
     },
     {
       name: "Danone DanBoard",
-      desc: "Web Applications used by Danone which presents information about Mineral Water Products in Indonesia from Nielsen, Kantar, Ipsos BHT, and Internal Reports",
+      desc: "Web Applications used by Danone which presents information about Mineral Water Products in Indonesia from Nielsen, Kantar, Ipsos BHT, and Internal Reports.",
       link: "",
-      image: "/images/portfolio/danone-danboard.png",
+      image: "/images/projects/danone-danboard.png",
       status: "live",
     },
     {
       name: "Danone Forecast",
-      desc: "Web Application using by Danone which presents information about Forecast Danone Product (Aqua and Vit) and Competotirs Product",
+      desc: "Web Application using by Danone which presents information about Forecast Danone Product (Aqua and Vit) and Competitors Product.",
       link: "",
-      image: "/images/portfolio/danone-forecast.png",
+      image: "/images/projects/danone-forecast.png",
       status: "live",
     },
     {
       name: "Toll Information Center",
-      desc: "",
+      desc: "Toll Information Center operated by Delameta, the company does operate integrated traffic command centers, which serve as control hubs for toll transactions and traffic monitoring. These centers manage the ETC systems, monitor vehicle flow, and ensure payment processing across their managed toll segments.",
       link: "",
-      image: "/images/portfolio/tic.png",
+      image: "/images/projects/tic.png",
       status: "live",
     },
   ];
@@ -86,7 +86,7 @@ const Portfolio = () => {
   return (
     <>
       <div
-        id="portfolio"
+        id="projects"
         className="relative h-screen flex flex-col justify-between"
       >
         <motion.div
@@ -96,7 +96,7 @@ const Portfolio = () => {
           transition={{ duration: 1.5 }}
           className="h-full w-full flex flex-col gap-6 md:gap-10 p-6 md:p-12"
         >
-          <h2 className="text-4xl md:text-6xl">Portfolio</h2>
+          <h2 className="text-4xl md:text-6xl">Projects</h2>
           <div className="h-auto overflow-y-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-6 pb-12">
             {PROJECTS.map((project, idx) => (
               <motion.div
@@ -181,7 +181,7 @@ const Portfolio = () => {
               <h2 className="text-lg md:text-xl font-semibold mb-4">
                 {selectedProject?.name}
               </h2>
-              <p className="text-sm md:text-md text-gray-700">
+              <p className="text-sm md:max-w-xl md:text-md text-gray-700">
                 {selectedProject?.desc}
               </p>
             </div>
@@ -219,4 +219,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default Projects;
