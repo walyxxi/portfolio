@@ -29,7 +29,7 @@ const Projects = () => {
     },
     {
       name: "eDOT",
-      desc: "Web Profile of eDOT Company.",
+      desc: "The official website of of eDOT Company.",
       link: "https://edot.id",
       image: "/images/projects/edot.png",
       status: "live",
