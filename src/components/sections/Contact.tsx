@@ -92,7 +92,7 @@ const Contact = () => {
         >
           <button
             onClick={() => {
-              const target = document.getElementById("portfolio");
+              const target = document.getElementById("projects");
               target?.scrollIntoView({ behavior: "smooth" });
             }}
             className="opacity-50 hover:opacity-100 border-2 border-primary rounded-full px-3 py-6 hover:bg-primary hover:text-black transition-colors"

@@ -57,7 +57,7 @@ const About = () => {
             </button>
             <button
               onClick={() => {
-                const target = document.getElementById("portfolio");
+                const target = document.getElementById("projects");
                 target?.scrollIntoView({ behavior: "smooth" });
               }}
               className="border-2 border-t-1 border-primary rounded-b-full px-3 py-3 hover:bg-primary hover:text-black transition-colors"
