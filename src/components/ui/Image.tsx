@@ -26,7 +26,7 @@ const Image: React.FC<ImageProps> = ({
         src={src}
         alt={alt}
         onLoad={() => setLoaded(true)}
-        className={`${className} w-full h-full transition-opacity duration-500 ${
+        className={`${className} transition-opacity duration-300 ${
           loaded ? "opacity-100" : "opacity-0"
         }`}
       />
