@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowDown, ArrowUp, Link } from "lucide-react";
 import { useState } from "react";
 import Modal from "../ui/Modal";
+import Image from "../ui/Image";
 
 interface Project {
   name: string;
@@ -108,11 +109,10 @@ const Projects = () => {
                 transition={{ duration: 0.7, delay: idx * 0.1 }}
                 className="h-auto bg-white/10 rounded-xl shadow-lg flex-1 flex-col justify-between cursor-pointer"
               >
-                <img
+                <Image
                   src={project.image}
                   alt={project.name}
                   className="w-full h-44 md:h-56 object-cover object-top rounded-t-xl"
-                  loading="lazy"
                 />
                 <div className="flex flex-col justify-between flex-1 p-2 md:p-3">
                   <div className="flex flex-row justify-between items-center">
@@ -207,10 +207,10 @@ const Projects = () => {
             </div>
           </div>
           <div>
-            <img
-              src={selectedProject?.image}
+            <Image
+              src={selectedProject?.image || ""}
+              alt={selectedProject?.name}
               className="rounded-t-xl md:rounded-r-xl md:rounded-t-none object-cover object-top"
-              loading="lazy"
             />
           </div>
         </div>
