@@ -58,7 +58,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
           >
             <button
               onClick={onClose}
-              className="absolute top-2 md:top-4 right-2 md:right-4 rounded-full bg-white/50 backdrop-blur-sm p-1 text-xl text-black cursor-pointer"
+              className="absolute z-50 top-2 md:top-4 right-2 md:right-4 rounded-full bg-white/50 backdrop-blur-sm p-1 text-xl text-black cursor-pointer"
             >
               <X />
             </button>
