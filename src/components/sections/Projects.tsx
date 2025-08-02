@@ -15,6 +15,13 @@ interface Project {
 const Projects = () => {
   const PROJECTS: Project[] = [
     {
+      name: "MyTelkomsel App",
+      desc: "MyTelkomsel is the official mobile app by Telkomsel, Indonesia’s largest mobile network operator. It allows users to check balance, view and purchase data or call packages, pay bills, redeem Telkomsel Points, and manage their account easily. The app also offers lifestyle features like entertainment content, travel tools, and access to exclusive deals. Users can log in with various Telkomsel services, including Halo, simPATI, KARTU As, Orbit, or IndiHome.",
+      link: "https://play.google.com/store/apps/details?id=com.telkomsel.telkomselcm",
+      image: "/images/projects/mytsel.png",
+      status: "live",
+    },
+    {
       name: "FreshCo",
       desc: `Freshco Fruit in Indonesia is a fruit store that sells fresh fruits, including both local and premium imported varieties, as well as high-end "luxury" fruits. They also offer a product called Frosty Fruit, which consists of frozen shaved fruit. Freshco Fruit emphasizes the premium quality and freshness of their products — some of which are imported directly from their country of origin and flown to Indonesia using a well-maintained cold chain system.`,
       link: "",
@@ -40,13 +47,6 @@ const Projects = () => {
       desc: "Web Chat for eDOT",
       link: "https://chat.edot.id",
       image: "/images/projects/edot-chat.png",
-      status: "live",
-    },
-    {
-      name: "eDOT Wheel of Fortune",
-      desc: "Mini game that integrated with eDOT App.",
-      link: "https://fortune-wheel.edot.id",
-      image: "/images/projects/edot-wof.png",
       status: "live",
     },
     {

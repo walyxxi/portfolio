@@ -19,13 +19,12 @@ const About = () => {
           <p className="text-justify md:text-xl lg:text-2xl text-shadow-black text-shadow-lg">
             <b className="underline">Professional Summary</b>
             <br />
-            I’m a passionate Software Developer with 6+ years of experience in
-            full-stack web development, specializing in JavaScript, TypeScript,
-            React.js, Next.js, and Node.js. I build scalable, user-friendly
-            applications and have contributed to large-scale projects like the
-            MyTelkomsel app, used by millions. I focus on performance, clean
-            architecture, and solving real-world problems with practical
-            solutions.
+            I'm a Software Developer with 6+ years of experience in full-stack
+            web, frontend and backend application development. Proficient in
+            Javascript (React.js, Next.js, Node.js), Typescript, PHP, Python and
+            building RESTful APIs with microservices architecture. Contributed
+            to large-scale projects including the MyTelkomsel app. Possesses
+            strong analytical and problem-solving skills.
           </p>
           <p className="text-justify md:text-xl lg:text-2xl text-shadow-black text-shadow-lg">
             <b className="underline">Background</b>
