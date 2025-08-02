@@ -36,6 +36,13 @@ const About = () => {
             2019 I began working as a Full-stack Developer at PT. Delameta
             Bilano.
           </p>
+          <a
+            href="/CV_Waliyul Ardy.pdf"
+            download
+            className="text-center text-lg md:text-xl cursor-pointer w-40 md:w-50 rounded-full px-4 py-3 text-black bg-primary hover:bg-primary/80"
+          >
+            Download CV
+          </a>
         </div>
       </motion.div>
       <div className="absolute bottom-0 w-full flex flex-col">
