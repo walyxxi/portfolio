@@ -56,7 +56,7 @@ export default function WorkExperience() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1.5 }}
-        className="h-full w-full flex flex-col gap-10 p-6 lg:p-12"
+        className="h-full w-full flex flex-col gap-10 p-6 md:p-12"
       >
         <h2 className="text-4xl md:text-6xl">Work Experience</h2>
         <div className="flex flex-row items-start lg:justify-center gap-10 lg:gap-20">
@@ -81,7 +81,7 @@ export default function WorkExperience() {
           </div>
 
           {/* Timeline */}
-          <div className="relative flex flex-col items-center">
+          <div className="relative ml-2 flex flex-col items-center">
             <div className="absolute top-0 bottom-0 w-px bg-dashed border-l-2 border-dashed" />
             {experiences.map((exp, idx) => (
               <motion.div
@@ -93,7 +93,7 @@ export default function WorkExperience() {
                 viewport={{ once: true, amount: 0.8 }}
               >
                 <div
-                  className={`w-8 lg:w-10 h-8 lg:h-10 rounded-full border-2 p-2 border-dashed ${exp.color}`}
+                  className={`w-8 lg:w-10 h-8 lg:h-10 rounded-full border-2 border-black outline-2 outline-dashed ${exp.color}`}
                 />
                 {idx !== experiences.length - 1 && <div className="h-36" />}
               </motion.div>
