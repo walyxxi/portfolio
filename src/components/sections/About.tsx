@@ -63,7 +63,7 @@ const About = () => {
             </button>
             <button
               onClick={() => {
-                const target = document.getElementById("projects");
+                const target = document.getElementById("experience");
                 target?.scrollIntoView({ behavior: "smooth" });
               }}
               className="border-2 border-t-1 border-primary rounded-b-full px-3 py-3 hover:bg-primary hover:text-black transition-colors"

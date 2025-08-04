@@ -1,6 +1,6 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowUp, Link } from "lucide-react";
-import { useState } from "react";
 import Modal from "../ui/Modal";
 import Image from "../ui/Image";
 
@@ -9,7 +9,9 @@ interface Project {
   desc?: string;
   link?: string;
   image: string;
+  techs: string[];
   status: string;
+  role: string;
 }
 
 const Projects = () => {
@@ -19,7 +21,9 @@ const Projects = () => {
       desc: "MyTelkomsel is the official mobile app by Telkomsel, Indonesia’s largest mobile network operator. It allows users to check balance, view and purchase data or call packages, pay bills, redeem Telkomsel Points, and manage their account easily. The app also offers lifestyle features like entertainment content, travel tools, and access to exclusive deals. Users can log in with various Telkomsel services, including Halo, simPATI, KARTU As, Orbit, or IndiHome.",
       link: "https://play.google.com/store/apps/details?id=com.telkomsel.telkomselcm",
       image: "/images/projects/mytsel.png",
+      techs: ["node"],
       status: "live",
+      role: "Backend Developer",
     },
     {
       name: "FreshCo",
@@ -27,6 +31,8 @@ const Projects = () => {
       link: "",
       image: "/images/projects/freshco.png",
       status: "inprogress",
+      techs: ["next"],
+      role: "Frontend Developer",
     },
     {
       name: "ANIHOST",
@@ -34,6 +40,8 @@ const Projects = () => {
       link: "https://anihost.com",
       image: "/images/projects/anihost.png",
       status: "live",
+      techs: ["next"],
+      role: "Frontend Developer",
     },
     {
       name: "eDOT",
@@ -41,6 +49,8 @@ const Projects = () => {
       link: "https://edot.id",
       image: "/images/projects/edot.png",
       status: "live",
+      techs: ["next"],
+      role: "Frontend Developer",
     },
     {
       name: "eDOT Chat",
@@ -48,6 +58,8 @@ const Projects = () => {
       link: "https://chat.edot.id",
       image: "/images/projects/edot-chat.png",
       status: "live",
+      techs: ["next"],
+      role: "Frontend Developer",
     },
     {
       name: "Danone DanBoard",
@@ -55,6 +67,8 @@ const Projects = () => {
       link: "",
       image: "/images/projects/danone-danboard.png",
       status: "live",
+      techs: ["react"],
+      role: "Frontend Developer",
     },
     {
       name: "Danone Forecast",
@@ -62,6 +76,8 @@ const Projects = () => {
       link: "",
       image: "/images/projects/danone-forecast.png",
       status: "live",
+      techs: ["react"],
+      role: "Frontend Developer",
     },
     {
       name: "Toll Information Center",
@@ -69,6 +85,8 @@ const Projects = () => {
       link: "",
       image: "/images/projects/tic.png",
       status: "live",
+      techs: ["node", "react"],
+      role: "Fullstack Developer",
     },
   ];
 
@@ -151,7 +169,7 @@ const Projects = () => {
             <div className="flex flex-col opacity-50 hover:opacity-100 active:opacity-100">
               <button
                 onClick={() => {
-                  const target = document.getElementById("about");
+                  const target = document.getElementById("experience");
                   target?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="border-2 bg-black border-b-1 border-primary rounded-t-full px-3 py-3 hover:bg-primary hover:text-black transition-colors"
@@ -178,9 +196,12 @@ const Projects = () => {
         <div className="flex md:flex-row flex-col-reverse">
           <div className="flex flex-col justify-between p-2 md:p-4 md:min-w-1/4">
             <div>
-              <h2 className="text-lg md:text-xl font-semibold mb-4">
+              <h2 className="text-lg md:text-2xl font-semibold border-b">
                 {selectedProject?.name}
               </h2>
+              <h4 className="text-xs md:text-sm uppercase mb-2 md:mb-3 text-primary/50">
+                {selectedProject?.role}
+              </h4>
               <p className="text-sm md:max-w-xl md:text-md text-gray-700">
                 {selectedProject?.desc}
               </p>
