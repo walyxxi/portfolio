@@ -8,7 +8,7 @@ const experiences = [
     period: "Jul 2019 - Oct 2020",
     role: "Fullstack Developer",
     description: "",
-    color: "bg-primary",
+    color: "bg-white",
   },
   {
     company: "Platinumetrix Global Inovasi",
@@ -16,7 +16,7 @@ const experiences = [
     period: "Oct 2020 - Oct 2021",
     role: "Frontend Developer",
     description: "",
-    color: "bg-primary",
+    color: "bg-white",
   },
   {
     company: "Elektronik Distribusi Otomatisasi Terkemuka",
@@ -24,7 +24,7 @@ const experiences = [
     period: "Oct 2022 - Jul 2023",
     role: "Frontend Developer",
     description: "",
-    color: "bg-primary",
+    color: "bg-white",
   },
   {
     company: "Phintraco Consulting",
@@ -32,7 +32,7 @@ const experiences = [
     period: "Nov 2023 - Jun 2025",
     role: "Senior Web Developer",
     description: "",
-    color: "bg-primary",
+    color: "bg-white",
   },
 ];
 
