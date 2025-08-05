@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowDown, ArrowUp, Link } from "lucide-react";
+import { Link } from "lucide-react";
 import Modal from "../ui/Modal";
 import Image from "../ui/Image";
 
@@ -106,7 +106,7 @@ const Projects = () => {
     <>
       <div
         id="projects"
-        className="relative h-screen flex flex-col justify-between"
+        className="relative flex flex-col justify-between text-primary-light"
       >
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -115,8 +115,7 @@ const Projects = () => {
           transition={{ duration: 1.5 }}
           className="h-full w-full flex flex-col gap-6 md:gap-10 p-6 md:p-12"
         >
-          <h2 className="text-4xl md:text-6xl">Projects</h2>
-          <div className="h-auto overflow-y-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-6 pb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 text-primary-light">
             {PROJECTS.map((project, idx) => (
               <motion.div
                 onClick={() => onModalOpen(project)}
@@ -132,74 +131,42 @@ const Projects = () => {
                   alt={project.name}
                   className="w-full h-44 md:h-56 object-cover object-top rounded-t-xl"
                 />
-                <div className="flex flex-col justify-between flex-1 p-2 md:p-3">
-                  <div className="flex flex-row justify-between items-center">
-                    <h3 className="font-bold text-lg">{project.name}</h3>
-                    {project.link ? (
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-primary underline text-xs font-medium"
-                      >
-                        Visit
-                      </a>
-                    ) : (
-                      <span className="text-xs">
-                        {project.status === "inprogress" ? (
-                          <i>Build In Progress</i>
-                        ) : (
-                          "Internal Use"
-                        )}
-                      </span>
-                    )}
-                  </div>
+                <div className="flex flex-row justify-between items-center flex-1 p-2 md:p-3 bg-black rounded-b-xl">
+                  <h3 className="font-bold">{project.name}</h3>
+                  {project.link ? (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline text-xs font-medium"
+                    >
+                      Visit
+                    </a>
+                  ) : (
+                    <span className="text-xs">
+                      {project.status === "inprogress" ? (
+                        <i>Build In Progress</i>
+                      ) : (
+                        "Internal Use"
+                      )}
+                    </span>
+                  )}
                 </div>
               </motion.div>
             ))}
           </div>
         </motion.div>
-        <div className="flex flex-col">
-          <motion.div
-            className="absolute bottom-12 right-0 flex justify-end items-center p-6 md:p-12"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 1.5 }}
-          >
-            <div className="flex flex-col opacity-50 hover:opacity-100 active:opacity-100">
-              <button
-                onClick={() => {
-                  const target = document.getElementById("experience");
-                  target?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="border-2 bg-black border-b-1 border-primary rounded-t-full px-3 py-3 hover:bg-primary hover:text-black transition-colors"
-              >
-                <ArrowUp className="w-4 h-4 md:w-6 md:h-6" />
-              </button>
-              <button
-                onClick={() => {
-                  const target = document.getElementById("contact");
-                  target?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="border-2 bg-black border-t-1 border-primary rounded-b-full px-3 py-3 hover:bg-primary hover:text-black transition-colors"
-              >
-                <ArrowDown className="w-4 h-4 md:w-6 md:h-6" />
-              </button>
-            </div>
-          </motion.div>
-          <div className="absolute bottom-0 right-0 h-10 md:h-12 w-full bg-primary" />
-        </div>
       </div>
 
       {/* Portfolio Details */}
       <Modal isOpen={isModalOpen} onClose={onModalClose}>
-        <div className="flex md:flex-row flex-col-reverse">
+        <div className="flex md:flex-row flex-col-reverse text-primary-light">
           <div className="flex flex-col justify-between p-2 md:p-4 md:min-w-1/4">
             <div>
-              <h2 className="text-lg md:text-2xl font-semibold border-b">
+              <h3 className="text-lg md:text-xl font-semibold border-b">
                 {selectedProject?.name}
-              </h2>
-              <h4 className="text-xs md:text-sm uppercase mb-2 md:mb-3 text-primary/50">
+              </h3>
+              <h4 className="text-xs md:text-sm uppercase mb-2 md:mb-3">
                 {selectedProject?.role}
               </h4>
               <p className="text-sm md:max-w-xl md:text-md text-gray-700">

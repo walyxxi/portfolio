@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { ArrowUp } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaMapLocation } from "react-icons/fa6";
 import { MdEmail, MdWhatsapp } from "react-icons/md";
@@ -10,10 +9,22 @@ const Contact = () => {
   const WA_NUMBER: string = "6282236857567";
   const EMAIL: string = "waliyulardy@gmail.com";
 
+  const SECTIONS = [
+    { id: 1, label: "Home", name: "hero" },
+    { id: 2, label: "About", name: "about" },
+    {
+      id: 3,
+      label: "Work Experience",
+      name: "experience",
+    },
+    { id: 4, label: "Projects", name: "projects" },
+    { id: 5, name: "contact" },
+  ];
+
   return (
     <div
       id="contact"
-      className="relative h-screen flex flex-col justify-between"
+      className="relative flex flex-col justify-between rounded-t-4xl bg-black text-primary"
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -22,7 +33,7 @@ const Contact = () => {
         transition={{ duration: 1.5 }}
         className="h-full w-full flex flex-col gap-6 md:gap-10 p-6 md:p-12"
       >
-        <div className="overflow-y-auto flex items-center flex-wrap gap-6 md:gap-12 scroll">
+        <div className="flex flex-wrap gap-6 md:gap-12 scroll">
           <div className="flex w-full md:w-auto flex-col items-center justify-center text-lg">
             <img
               src="/images/logo.png"
@@ -35,9 +46,37 @@ const Contact = () => {
             </span>
           </div>
           <div className="flex flex-col gap-4">
+            <span className="text-lg font-bold">Let's Connect!</span>
+            <span className="font-extralight">
+              Feel free to reach out for collaborations, job opportunities, or
+              just a friendly chat!
+            </span>
+            <span className="font-extralight">
+              I look forward to hearing from you!
+            </span>
+          </div>
+          <div className="flex flex-col gap-4">
+            <span className="text-lg font-bold">Navigations</span>
+            {SECTIONS.map((section) => (
+              <button
+                key={section.id + section.name}
+                onClick={() => {
+                  const target = document.getElementById(section.name);
+                  target?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className={`${
+                  section.id === 5 && "hidden"
+                } text-start first-letter:uppercase cursor-pointer`}
+              >
+                {section.label}
+              </button>
+            ))}
+          </div>
+          <div className="flex flex-col gap-4">
+            <span className="text-lg font-bold">Contact</span>
             <a
               href={`https://maps.app.goo.gl/q8aNwfHoVbwQYCzSA`}
-              className="flex flex-row gap-3 items-center text-xl"
+              className="flex flex-row gap-3 items-center"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -46,7 +85,7 @@ const Contact = () => {
             </a>
             <a
               href={`https://wa.me/${WA_NUMBER}`}
-              className="flex flex-row gap-3 items-center text-xl"
+              className="flex flex-row gap-3 items-center"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -55,7 +94,7 @@ const Contact = () => {
             </a>
             <a
               href={`mailto:${EMAIL}`}
-              className="flex flex-row gap-3 items-center text-xl"
+              className="flex flex-row gap-3 items-center"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -64,7 +103,7 @@ const Contact = () => {
             </a>
             <a
               href={`https://linkedin.com/in/${USERNAME}`}
-              className="flex flex-row gap-3 items-center text-xl"
+              className="flex flex-row gap-3 items-center"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -73,7 +112,7 @@ const Contact = () => {
             </a>
             <a
               href={`https://github.com/${USERNAME}`}
-              className="flex flex-row gap-3 items-center text-xl"
+              className="flex flex-row gap-3 items-center"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -83,24 +122,8 @@ const Contact = () => {
           </div>
         </div>
       </motion.div>
-      <div className="absolute bottom-0 w-full flex flex-col">
-        <motion.div
-          className="flex justify-end items-center p-6 md:p-12"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.8 }}
-        >
-          <button
-            onClick={() => {
-              const target = document.getElementById("projects");
-              target?.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="opacity-50 hover:opacity-100 border-2 border-primary rounded-full px-3 py-6 hover:bg-primary hover:text-black transition-colors"
-          >
-            <ArrowUp className="w-4 h-4 md:w-6 md:h-6" />
-          </button>
-        </motion.div>
-        <div className="h-10 md:h-12 w-full bg-primary" />
+      <div className="text-center w-full bg-primary text-black">
+        Copyright© 2025 Waliyul Ardy. All Rights Reserved.
       </div>
     </div>
   );

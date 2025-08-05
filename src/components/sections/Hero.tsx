@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+// import { ArrowDown } from "lucide-react";
 
 export default function HeroSection() {
   return (
@@ -17,7 +17,7 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-20 flex flex-col justify-between h-full">
-        <div className="flex justify-between items-start p-6 md:p-12">
+        <div className="flex justify-between items-end md:items-center p-6 md:p-12">
           <motion.div
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -49,31 +49,14 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
         >
-          <h1 className="text-4xl md:text-6xl leading-tight">Waliyul Ardy</h1>
+          <h1 className="text-4xl md:text-6xl leading-tight font-bold">
+            Waliyul Ardy
+          </h1>
           <h3 className="text-2xl md:text-4xl leading-tight font-light">
             Software Developer
           </h3>
         </motion.div>
-
-        <div className="flex flex-col items-end">
-          <motion.div
-            className="flex justify-end items-center p-6 md:p-12"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-          >
-            <button
-              onClick={() => {
-                const target = document.getElementById("about");
-                target?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="opacity-50 hover:opacity-100 border-2 border-primary rounded-full px-3 py-6 hover:bg-primary hover:text-black transition-colors"
-            >
-              <ArrowDown className="w-4 h-4 md:w-6 md:h-6" />
-            </button>
-          </motion.div>
-          <div className="h-10 md:h-12 w-full bg-primary" />
-        </div>
+        <div />
       </div>
     </section>
   );

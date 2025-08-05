@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { ArrowDown, ArrowUp } from "lucide-react";
 
 const experiences = [
   {
@@ -8,7 +7,7 @@ const experiences = [
     period: "Jul 2019 - Oct 2020",
     role: "Fullstack Developer",
     description: "",
-    color: "bg-white",
+    color: "bg-primary-light",
   },
   {
     company: "Platinumetrix Global Inovasi",
@@ -16,7 +15,7 @@ const experiences = [
     period: "Oct 2020 - Oct 2021",
     role: "Frontend Developer",
     description: "",
-    color: "bg-white",
+    color: "bg-primary-dark",
   },
   {
     company: "Elektronik Distribusi Otomatisasi Terkemuka",
@@ -24,7 +23,7 @@ const experiences = [
     period: "Oct 2022 - Jul 2023",
     role: "Frontend Developer",
     description: "",
-    color: "bg-white",
+    color: "bg-primary-light",
   },
   {
     company: "Phintraco Consulting",
@@ -32,7 +31,7 @@ const experiences = [
     period: "Nov 2023 - Jun 2025",
     role: "Senior Web Developer",
     description: "",
-    color: "bg-white",
+    color: "bg-primary-dark",
   },
 ];
 
@@ -47,10 +46,7 @@ const fadeIn = {
 
 export default function WorkExperience() {
   return (
-    <div
-      id="experience"
-      className="relative h-screen overflow-hidden text-primary"
-    >
+    <div id="experience" className="relative overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -58,7 +54,6 @@ export default function WorkExperience() {
         transition={{ duration: 1.5 }}
         className="h-full w-full flex flex-col gap-10 p-6 md:p-12"
       >
-        <h2 className="text-4xl md:text-6xl">Work Experience</h2>
         <div className="flex flex-row items-start lg:justify-center gap-10 lg:gap-20">
           {/* Left Side */}
           <div className="lg:flex lg:flex-col lg:mt-1 w-2/5 hidden">
@@ -70,7 +65,9 @@ export default function WorkExperience() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.5 }}
                 variants={fadeIn}
-                className="h-auto lg:h-46 text-end"
+                className={`h-auto lg:${
+                  idx === experiences.length - 1 ? "1-20" : "h-46"
+                } text-end`}
               >
                 <h3 className="lg:text-xl xl:text-2xl font-semibold">
                   {exp.company}
@@ -93,7 +90,7 @@ export default function WorkExperience() {
                 viewport={{ once: true, amount: 0.8 }}
               >
                 <div
-                  className={`w-8 lg:w-10 h-8 lg:h-10 rounded-full border-2 border-black outline-2 outline-dashed ${exp.color}`}
+                  className={`w-8 lg:w-10 h-8 lg:h-10 rounded-full border-2 border-primary outline-2 outline-dashed ${exp.color}`}
                 />
                 {idx !== experiences.length - 1 && <div className="h-36" />}
               </motion.div>
@@ -110,7 +107,11 @@ export default function WorkExperience() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.5 }}
                 variants={fadeIn}
-                className="h-44 lg:h-46"
+                className={`${
+                  idx === experiences.length - 1
+                    ? "h-26 lg:h-10"
+                    : "h-44 lg:h-46"
+                }`}
               >
                 <h3 className="text-xl xl:text-2xl font-semibold">
                   {exp.role}
@@ -123,36 +124,6 @@ export default function WorkExperience() {
           </div>
         </div>
       </motion.div>
-      <div className="absolute bottom-0 w-full flex flex-col">
-        <motion.div
-          className="flex justify-end items-center p-6 md:p-12"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6, duration: 1.5 }}
-        >
-          <div className="flex flex-col opacity-50 hover:opacity-100">
-            <button
-              onClick={() => {
-                const target = document.getElementById("about");
-                target?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="border-2 border-b-1 border-primary rounded-t-full px-3 py-3 hover:bg-primary hover:text-black transition-colors"
-            >
-              <ArrowUp className="w-4 h-4 md:w-6 md:h-6" />
-            </button>
-            <button
-              onClick={() => {
-                const target = document.getElementById("projects");
-                target?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="border-2 border-t-1 border-primary rounded-b-full px-3 py-3 hover:bg-primary hover:text-black transition-colors"
-            >
-              <ArrowDown className="w-4 h-4 md:w-6 md:h-6" />
-            </button>
-          </div>
-        </motion.div>
-        <div className="h-10 md:h-12 w-full bg-primary" />
-      </div>
     </div>
   );
 }
