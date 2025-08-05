@@ -33,7 +33,7 @@ const About = () => {
           <a
             href="/CV_Waliyul Ardy.pdf"
             download
-            className="text-center text-lg md:text-xl border-2 border-black font-bold cursor-pointer w-40 md:w-50 rounded-full px-4 py-3 text-black bg-primary hover:bg-black hover:text-white transition-colors duration-300"
+            className="text-center md:text-xl border-2 border-black font-bold cursor-pointer w-40 md:w-50 rounded-full px-4 py-3 text-black bg-primary hover:bg-black hover:text-white transition-colors duration-300"
           >
             Download CV
           </a>
