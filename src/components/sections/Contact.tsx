@@ -58,7 +58,7 @@ const Contact = () => {
             <a
               href={`https://wa.me/${WA_NUMBER}`}
               target="_blank"
-              className="flex items-center justify-center gap-1 text-center text-sm border-2 border-primary cursor-pointer w-40 md:w-40 rounded-full py-3 text-black bg-primary hover:bg-primary-dark hover:text-primary-light transition-colors duration-300"
+              className="flex items-center justify-center gap-1 text-center text-sm border-2 border-primary cursor-pointer w-40 md:w-40 rounded-full py-3 text-black bg-primary hover:bg-primary hover:text-primary-light transition-colors duration-300"
             >
               Let's Connect <RxArrowTopRight className="w-5 h-5" />
             </a>
