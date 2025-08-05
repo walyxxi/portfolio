@@ -129,8 +129,17 @@ function App() {
           <div
             className={`${
               (section.id === 1 || section.id === 5) && "hidden"
-            } shadow-xl sticky h-16 top-0 w-full bg-black z-30 pt-3 font-semibold text-primary-light text-3xl md:6xl pl-6 md:pl-12`}
+            } sticky h-16 top-0 w-full ${
+              section.id % 2 === 0
+                ? "bg-primary text-black"
+                : "bg-black text-primary-light"
+            } z-30 pt-2 font-semibold text-3xl md:6xl pl-6 md:pl-12`}
           >
+            <div
+              className={`h-1.5 w-18 mb-2 mt-1 ${
+                section.id % 2 === 0 ? "bg-black" : "bg-primary-light"
+              }`}
+            />
             {section.label}
           </div>
           {section.section}

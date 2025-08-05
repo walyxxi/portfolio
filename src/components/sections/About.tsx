@@ -8,10 +8,10 @@ const About = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1.5 }}
-        className="h-full flex flex-col xl:w-1/2 gap-6 md:gap-10 p-6 md:p-12"
+        className="h-full flex flex-col xl:w-1/2 gap-6 md:gap-10 p-6 md:p-12 md:pt-6"
       >
         <div className="h-full flex flex-wrap gap-4 md:gap-6 scroll">
-          <p className="md:text-xl lg:text-2xl">
+          <p className="md:text-lg lg:text-xl">
             <b className="underline">Professional Summary</b>
             <br />
             I'm a Software Developer with 6+ years of experience in full-stack
@@ -21,7 +21,7 @@ const About = () => {
             to large-scale projects including the MyTelkomsel app. Possesses
             strong analytical and problem-solving skills.
           </p>
-          <p className="md:text-xl lg:text-2xl">
+          <p className="md:text-lg lg:text-xl">
             <b className="underline">Background</b>
             <br />
             After graduating from STMIK Bumigora Mataram (now Bumigora

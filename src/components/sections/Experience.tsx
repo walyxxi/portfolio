@@ -7,7 +7,7 @@ const experiences = [
     period: "Jul 2019 - Oct 2020",
     role: "Fullstack Developer",
     description: "",
-    color: "bg-primary-light",
+    color: "bg-primary",
   },
   {
     company: "Platinumetrix Global Inovasi",
@@ -23,7 +23,7 @@ const experiences = [
     period: "Oct 2022 - Jul 2023",
     role: "Frontend Developer",
     description: "",
-    color: "bg-primary-light",
+    color: "bg-primary",
   },
   {
     company: "Phintraco Consulting",
@@ -52,7 +52,7 @@ export default function WorkExperience() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1.5 }}
-        className="h-full w-full flex flex-col gap-10 p-6 md:p-12"
+        className="h-full w-full flex flex-col gap-10 p-6 md:p-12 bg-black text-primary-light"
       >
         <div className="flex flex-row items-start lg:justify-center gap-10 lg:gap-20">
           {/* Left Side */}
@@ -90,7 +90,7 @@ export default function WorkExperience() {
                 viewport={{ once: true, amount: 0.8 }}
               >
                 <div
-                  className={`w-8 lg:w-10 h-8 lg:h-10 rounded-full border-2 border-primary outline-2 outline-dashed ${exp.color}`}
+                  className={`w-8 lg:w-10 h-8 lg:h-10 rounded-full border-2 border-black outline-2 outline-dashed ${exp.color}`}
                 />
                 {idx !== experiences.length - 1 && <div className="h-36" />}
               </motion.div>

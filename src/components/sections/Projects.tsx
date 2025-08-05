@@ -113,7 +113,7 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1.5 }}
-          className="h-full w-full flex flex-col gap-6 md:gap-10 p-6 md:p-12"
+          className="h-full w-full flex flex-col gap-6 md:gap-10 p-6 md:p-12 md:pt-6"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 text-primary-light">
             {PROJECTS.map((project, idx) => (
