@@ -12,7 +12,7 @@ const Image: React.FC<ImageProps> = ({
   alt = "",
   className = "",
   loader = (
-    <div className="inset-0 flex items-center justify-center bg-gray-100">
+    <div className="inset-0 min-h-60 flex items-center justify-center bg-gray-100">
       Loading...
     </div>
   ),

@@ -2,7 +2,7 @@ import Hero from "./components/sections/Hero";
 import About from "./components/sections/About";
 import Projects from "./components/sections/Projects";
 import Contact from "./components/sections/Contact";
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import WorkExperience from "./components/sections/Experience";
 import { motion } from "framer-motion";
 import { ArrowUp, XIcon } from "lucide-react";
@@ -31,6 +31,18 @@ function App() {
   ];
 
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+    // Cleanup when unmounting
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [menuOpen]);
 
   return (
     <div className="relative font-montserrat bg-primary text-black">

@@ -163,10 +163,10 @@ const Projects = () => {
         <div className="flex md:flex-row flex-col-reverse text-primary-light">
           <div className="flex flex-col justify-between p-2 md:p-4 md:min-w-1/4">
             <div>
-              <h3 className="text-lg md:text-xl font-semibold border-b">
+              <h3 className="text-lg md:text-xl text-primary font-semibold border-b">
                 {selectedProject?.name}
               </h3>
-              <h4 className="text-xs md:text-sm uppercase mb-2 md:mb-3">
+              <h4 className="text-sm md:text-sm uppercase mb-2 md:mb-3">
                 {selectedProject?.role}
               </h4>
               <p className="text-sm md:max-w-xl md:text-md text-gray-700">
