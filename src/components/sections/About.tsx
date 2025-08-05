@@ -11,7 +11,7 @@ const About = () => {
         className="h-full flex flex-col xl:w-1/2 gap-6 md:gap-10 p-6 md:p-12"
       >
         <div className="h-full flex flex-wrap gap-4 md:gap-6 scroll">
-          <p className="text-justify md:text-xl lg:text-2xl">
+          <p className="md:text-xl lg:text-2xl">
             <b className="underline">Professional Summary</b>
             <br />
             I'm a Software Developer with 6+ years of experience in full-stack
@@ -21,7 +21,7 @@ const About = () => {
             to large-scale projects including the MyTelkomsel app. Possesses
             strong analytical and problem-solving skills.
           </p>
-          <p className="text-justify md:text-xl lg:text-2xl">
+          <p className="md:text-xl lg:text-2xl">
             <b className="underline">Background</b>
             <br />
             After graduating from STMIK Bumigora Mataram (now Bumigora
@@ -30,13 +30,6 @@ const About = () => {
             2019 I began working as a Full-stack Developer at PT. Delameta
             Bilano.
           </p>
-          <a
-            href="/CV_Waliyul Ardy.pdf"
-            download
-            className="text-center md:text-xl border-2 border-black font-bold cursor-pointer w-40 md:w-50 rounded-full px-4 py-3 text-black bg-primary hover:bg-black hover:text-white transition-colors duration-300"
-          >
-            Download CV
-          </a>
         </div>
       </motion.div>
     </div>

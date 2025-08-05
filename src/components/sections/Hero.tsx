@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
-// import { ArrowDown } from "lucide-react";
+import { Download } from "lucide-react";
+import { RxArrowTopRight } from "react-icons/rx";
 
 export default function HeroSection() {
+  const WA_NUMBER: string = "6282236857567";
+
   return (
     <section
       id="hero"
-      className="relative h-screen overflow-hidden text-primary"
+      className="relative h-screen min-h-96 overflow-hidden text-primary pb-40 md:pb-56"
     >
       {/* Animated Background */}
       <motion.div
@@ -52,11 +55,26 @@ export default function HeroSection() {
           <h1 className="text-4xl md:text-6xl leading-tight font-bold">
             Waliyul Ardy
           </h1>
-          <h3 className="text-2xl md:text-4xl leading-tight font-light">
+          <h3 className="text-2xl md:text-4xl leading-tight font-light mb-6">
             Software Developer
           </h3>
+          <div className="flex md:flex-row gap-4">
+            <a
+              href="/CV_Waliyul Ardy.pdf"
+              download
+              className="flex items-center justify-center gap-1.5 text-center text-sm cursor-pointer w-40 md:w-44 rounded-full py-3 text-black bg-primary hover:bg-primary-dark hover:text-primary-light transition-colors duration-300"
+            >
+              <Download className="w-5 h-5" /> Download CV
+            </a>
+            <a
+              href={`https://wa.me/${WA_NUMBER}`}
+              target="_blank"
+              className="flex items-center justify-center gap-1 text-center text-sm border-2 border-primary cursor-pointer w-40 md:w-44 rounded-full py-3 text-primary hover:bg-primary hover:text-black transition-colors duration-300"
+            >
+              Let's Connect <RxArrowTopRight className="w-5 h-5" />
+            </a>
+          </div>
         </motion.div>
-        <div />
       </div>
     </section>
   );

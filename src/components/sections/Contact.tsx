@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaMapLocation } from "react-icons/fa6";
 import { MdEmail, MdWhatsapp } from "react-icons/md";
+import { RxArrowTopRight } from "react-icons/rx";
 
 const Contact = () => {
   const NAME: string = "Waliyul Ardy";
@@ -24,7 +25,7 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="relative flex flex-col justify-between rounded-t-4xl bg-black text-primary"
+      className="relative flex flex-col justify-between md:rounded-t-4xl bg-black text-primary"
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -54,6 +55,13 @@ const Contact = () => {
             <span className="font-extralight">
               I look forward to hearing from you!
             </span>
+            <a
+              href={`https://wa.me/${WA_NUMBER}`}
+              target="_blank"
+              className="flex items-center justify-center gap-1 text-center text-sm border-2 border-primary cursor-pointer w-40 md:w-40 rounded-full py-3 text-black bg-primary hover:bg-primary-dark hover:text-primary-light transition-colors duration-300"
+            >
+              Let's Connect <RxArrowTopRight className="w-5 h-5" />
+            </a>
           </div>
           <div className="flex flex-col gap-4">
             <span className="text-lg font-bold">Navigations</span>

@@ -27,7 +27,7 @@ function App() {
       section: <WorkExperience />,
     },
     { id: 4, label: "Projects", name: "projects", section: <Projects /> },
-    { id: 5, name: "contact", section: <Contact /> },
+    { id: 5, label: "Contact", name: "contact", section: <Contact /> },
   ];
 
   const [menuOpen, setMenuOpen] = useState(false);
@@ -53,7 +53,7 @@ function App() {
 
       {/* Navigation Bar */}
       {/* Desktop Navigation */}
-      <div className="hidden md:flex flex-row fixed top-0 right-0 rounded-bl-3xl h-16 bg-primary items-center justify-between px-10 gap-10 z-50">
+      <div className="hidden md:flex flex-row fixed top-0 right-0 rounded-bl-3xl h-16 bg-primary items-center justify-between pl-8 pr-12 gap-6 lg:gap-8 z-50">
         {SECTIONS.map((section) => (
           <button
             onClick={() => {
@@ -61,9 +61,7 @@ function App() {
               target?.scrollIntoView({ behavior: "smooth" });
             }}
             key={section.name}
-            className={`${
-              section.id === 5 && "hidden"
-            } text-black text-lg text-center first-letter:uppercase cursor-pointer`}
+            className={`text-black lg:text-lg text-center first-letter:uppercase cursor-pointer`}
           >
             {section.label}
           </button>
@@ -99,7 +97,7 @@ function App() {
           <XIcon className="h-7 w-7 text-primary-light" />
         </button>
         <div className="flex flex-col items-end p-8">
-          {SECTIONS.filter((section) => section.id !== 5).map((section) => (
+          {SECTIONS.map((section) => (
             <button
               key={section.name}
               onClick={() => {
@@ -118,7 +116,7 @@ function App() {
         <div key={section.id} id={section.name}>
           <div
             className={`${
-              (!section.label || section.id === 1) && "hidden"
+              (section.id === 1 || section.id === 5) && "hidden"
             } shadow-xl sticky h-16 top-0 w-full bg-black z-30 pt-3 font-semibold text-primary-light text-3xl md:6xl pl-6 md:pl-12`}
           >
             {section.label}

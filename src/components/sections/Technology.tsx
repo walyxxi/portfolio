@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const Layanan = () => {
+const TechStack = () => {
   const services = [
     "Aktivasi Merek",
     "Pemasaran Terintegrasi",
@@ -18,7 +18,7 @@ const Layanan = () => {
       transition={{ duration: 0.8 }}
       className="py-16 px-6 bg-white max-w-4xl mx-auto text-center"
     >
-      <h2 className="text-3xl font-semibold mb-6">Layanan</h2>
+      <h2 className="text-3xl font-semibold mb-6">TechStack</h2>
       <p className="mb-8 text-gray-700">REALISASIKAN VISI MEREK ANDA.</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {services.map((service, index) => (
@@ -31,4 +31,4 @@ const Layanan = () => {
   );
 };
 
-export default Layanan;
+export default TechStack;
