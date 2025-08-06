@@ -49,7 +49,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
         >
           <motion.div
             onClick={stopPropagation}
-            className="relative bg-black rounded-xl w-full max-w-5xl m-2"
+            className="relative bg-black rounded-xl w-full max-w-6xl m-2"
             variants={modalVariants}
             initial="hidden"
             animate="visible"

@@ -4,24 +4,53 @@ import { Link } from "lucide-react";
 import Modal from "../ui/Modal";
 import Image from "../ui/Image";
 
+type TechKey =
+  | "nodejs"
+  | "expressjs"
+  | "mysql"
+  | "redis"
+  | "docker"
+  | "nextjs"
+  | "tailwindcss"
+  | "reactjs"
+  | "sass"
+  | "postgresql"
+  | "arcgis"
+  | "materialui";
+
 interface Project {
   name: string;
   desc?: string;
   link?: string;
   image: string;
-  techs: string[];
+  techs: TechKey[];
   status: string;
   role: string;
 }
 
 const Projects = () => {
+  const techs: Record<TechKey, string> = {
+    nodejs: "Node.js",
+    expressjs: "Express.js",
+    mysql: "MySQL",
+    redis: "Redis",
+    docker: "Docker",
+    nextjs: "Next.js",
+    tailwindcss: "Tailwind CSS",
+    reactjs: "React.js",
+    sass: "Sass",
+    postgresql: "PostgreSQL",
+    arcgis: "ArcGIS",
+    materialui: "Material-UI",
+  };
+
   const PROJECTS: Project[] = [
     {
       name: "MyTelkomsel App",
       desc: "MyTelkomsel is the official mobile app by Telkomsel, Indonesia’s largest mobile network operator. It allows users to check balance, view and purchase data or call packages, pay bills, redeem Telkomsel Points, and manage their account easily. The app also offers lifestyle features like entertainment content, travel tools, and access to exclusive deals. Users can log in with various Telkomsel services, including Halo, simPATI, KARTU As, Orbit, or IndiHome.",
       link: "https://play.google.com/store/apps/details?id=com.telkomsel.telkomselcm",
       image: "/images/projects/mytsel.png",
-      techs: ["node"],
+      techs: ["nodejs", "expressjs", "mysql", "redis", "docker"],
       status: "live",
       role: "Backend Developer",
     },
@@ -31,7 +60,7 @@ const Projects = () => {
       link: "",
       image: "/images/projects/freshco.png",
       status: "inprogress",
-      techs: ["next"],
+      techs: ["nextjs", "tailwindcss", "docker"],
       role: "Frontend Developer",
     },
     {
@@ -40,7 +69,7 @@ const Projects = () => {
       link: "https://anihost.com",
       image: "/images/projects/anihost.png",
       status: "live",
-      techs: ["next"],
+      techs: ["nextjs", "tailwindcss", "docker"],
       role: "Frontend Developer",
     },
     {
@@ -49,7 +78,7 @@ const Projects = () => {
       link: "https://edot.id",
       image: "/images/projects/edot.png",
       status: "live",
-      techs: ["next"],
+      techs: ["nextjs", "tailwindcss", "docker"],
       role: "Frontend Developer",
     },
     {
@@ -58,7 +87,7 @@ const Projects = () => {
       link: "https://chat.edot.id",
       image: "/images/projects/edot-chat.png",
       status: "live",
-      techs: ["next"],
+      techs: ["nextjs", "tailwindcss", "docker"],
       role: "Frontend Developer",
     },
     {
@@ -67,7 +96,7 @@ const Projects = () => {
       link: "",
       image: "/images/projects/danone-danboard.png",
       status: "live",
-      techs: ["react"],
+      techs: ["reactjs", "sass"],
       role: "Frontend Developer",
     },
     {
@@ -76,7 +105,7 @@ const Projects = () => {
       link: "",
       image: "/images/projects/danone-forecast.png",
       status: "live",
-      techs: ["react"],
+      techs: ["reactjs", "sass", "arcgis"],
       role: "Frontend Developer",
     },
     {
@@ -85,7 +114,7 @@ const Projects = () => {
       link: "",
       image: "/images/projects/tic.png",
       status: "live",
-      techs: ["node", "react"],
+      techs: ["nodejs", "reactjs", "materialui", "expressjs", "postgresql"],
       role: "Fullstack Developer",
     },
   ];
@@ -161,19 +190,59 @@ const Projects = () => {
       {/* Portfolio Details */}
       <Modal isOpen={isModalOpen} onClose={onModalClose}>
         <div className="flex md:flex-row flex-col-reverse text-primary-light">
-          <div className="flex flex-col justify-between p-2 md:p-4 md:min-w-1/4">
+          <div className="flex flex-col justify-between gap-4 p-2 md:p-4 md:min-w-1/4">
             <div>
-              <h3 className="text-lg md:text-xl text-primary font-semibold border-b">
-                {selectedProject?.name}
-              </h3>
-              <h4 className="text-sm md:text-sm uppercase mb-2 md:mb-3">
+              <div className="flex flex-row justify-between items-center">
+                <h3 className="text-lg md:text-xl text-primary font-semibold">
+                  {selectedProject?.name}
+                </h3>
+                <div className="md:hidden">
+                  {selectedProject?.link ? (
+                    <a
+                      href={selectedProject.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-sm font-medium rounded-full bg-green/50 px-2 py-1"
+                    >
+                      <Link className="w-3 h-3" /> Visit
+                    </a>
+                  ) : (
+                    <span className="text-sm bg-orange px-2 py-1 rounded-full">
+                      {selectedProject?.status === "inprogress" ? (
+                        <i>Build In Progress</i>
+                      ) : (
+                        "Internal Use"
+                      )}
+                    </span>
+                  )}
+                </div>
+              </div>
+              <hr className="my-2 border-gray" />
+              <h4 className="text-sm text-primary-light/50 md:text-sm uppercase mb-2 md:mb-4">
                 {selectedProject?.role}
               </h4>
-              <p className="text-sm md:max-w-xl md:text-md text-gray-700">
+              <p className="text-sm md:max-w-xl md:text-md text-primary-light">
                 {selectedProject?.desc}
               </p>
             </div>
-            <div className="text-white w-auto mt-2">
+            <div className="flex flex-wrap gap-2">
+              {selectedProject?.techs.map((tech) => (
+                <span
+                  key={tech}
+                  className="px-2 py-1 border rounded-full first-letter:uppercase"
+                >
+                  <img
+                    src={`/icons/${tech}.svg`}
+                    alt={tech}
+                    className="inline-block w-6 h-6 mr-1"
+                  />
+                  <span className="ext-sm text-primary-light">
+                    {techs[tech]}
+                  </span>
+                </span>
+              ))}
+            </div>
+            <div className="hidden md:block text-white w-auto">
               {selectedProject?.link ? (
                 <a
                   href={selectedProject.link}
@@ -194,11 +263,11 @@ const Projects = () => {
               )}
             </div>
           </div>
-          <div>
+          <div className="h-auto w-full rounded-t-xl md:rounded-r-xl md:rounded-t-none overflow-hidden">
             <Image
               src={selectedProject?.image || ""}
               alt={selectedProject?.name}
-              className="rounded-t-xl md:rounded-r-xl md:rounded-t-none object-cover object-top"
+              className="object-cover object-top h-full"
             />
           </div>
         </div>
