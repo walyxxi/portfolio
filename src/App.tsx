@@ -95,7 +95,7 @@ function App() {
       </motion.div>
       {/* Mobile Menu */}
       <motion.div
-        className={`md:hidden fixed top-0 right-0 w-full h-full bg-white/50 backdrop-blur-sm z-40 transition-all duration-300 ${
+        className={`md:hidden fixed top-0 right-0 w-full h-full bg-white/50 backdrop-blur-sm z-50 transition-all duration-300 ${
           menuOpen ? "block" : "hidden"
         }`}
         initial={false}
