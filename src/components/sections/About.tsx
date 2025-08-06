@@ -6,7 +6,7 @@ const About = () => {
       <motion.img
         src="/images/about-ilustration.png"
         alt="About Illustration"
-        className="absolute bottom-0 right-0 w-100 md:w-115 lg:w-150 object-cover"
+        className="absolute bottom-0 -right-8 lg:-left-8 w-100 md:w-115 lg:w-150 object-cover lg:scale-x-[-1]"
         initial={{ scale: 1.2, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
         viewport={{ once: true }}
@@ -17,7 +17,7 @@ const About = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1.5 }}
-        className="h-full flex flex-col lg:w-1/2 gap-6 md:gap-10 p-6 md:p-12 md:pt-6 mb-60 lg:mb-0"
+        className="h-full right float-end flex flex-col lg:w-1/2 gap-6 md:gap-10 p-6 md:p-12 md:pt-6 mb-60 lg:mb-0"
       >
         <div className="h-full flex flex-wrap gap-4 md:gap-6 scroll">
           <p className="md:text-lg lg:text-xl">
