@@ -45,7 +45,7 @@ function App() {
   }, [menuOpen]);
 
   return (
-    <div className="relative font-montserrat bg-primary text-black">
+    <div className="relative font-montserrat text-black">
       <motion.div
         className="absolute bottom-12 right-0 flex justify-end items-center p-6 md:p-12 z-50"
         initial={{ opacity: 0 }}

@@ -25,7 +25,7 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="relative flex flex-col justify-between md:rounded-t-4xl bg-black text-primary"
+      className="relative md:rounded-t-4xl bg-black text-primary"
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}

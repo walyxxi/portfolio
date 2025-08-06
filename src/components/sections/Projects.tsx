@@ -133,10 +133,7 @@ const Projects = () => {
 
   return (
     <>
-      <div
-        id="projects"
-        className="relative flex flex-col justify-between text-primary-light"
-      >
+      <div id="projects" className="relative text-primary-light bg-primary">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
